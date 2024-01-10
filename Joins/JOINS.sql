@@ -42,8 +42,6 @@ INSERT INTO courses (course_id, course_name) VALUES
 (104, 'Civil Engineering');
 
 
-
-
 -- INNER JOIN 
 SELECT students.student_name,courses.course_name from students 
 INNER JOIN courses ON students.course_id=courses.course_id;
@@ -53,3 +51,8 @@ INNER JOIN courses ON students.course_id=courses.course_id;
 
 SELECT students.student_id,students.student_name,courses.course_id,courses.course.name FROM students 
 LEFT JOIN courses ON students.course_id=courses.course_id;
+
+
+--Cross Join
+
+SELECT * from college CROSS JOIN department;
