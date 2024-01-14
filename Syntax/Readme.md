@@ -319,3 +319,140 @@
     SELECT column1 FROM table1
     WHERE MATCH(column1) AGAINST('search_term');
     ```
+### Triggers:
+
+51. **CREATE TRIGGER:**
+    ```sql
+    CREATE TRIGGER trigger_name
+    BEFORE INSERT ON table_name
+    FOR EACH ROW
+    BEGIN
+        -- Trigger logic here
+    END;
+    ```
+
+52. **DROP TRIGGER:**
+    ```sql
+    DROP TRIGGER trigger_name;
+    ```
+
+### Stored Procedures:
+
+53. **CREATE PROCEDURE:**
+    ```sql
+    CREATE PROCEDURE procedure_name
+    AS
+    BEGIN
+        -- Procedure logic here
+    END;
+    ```
+
+54. **ALTER PROCEDURE:**
+    ```sql
+    ALTER PROCEDURE procedure_name
+    AS
+    BEGIN
+        -- Updated procedure logic here
+    END;
+    ```
+
+55. **DROP PROCEDURE:**
+    ```sql
+    DROP PROCEDURE procedure_name;
+    ```
+
+### Functions:
+
+56. **CREATE FUNCTION:**
+    ```sql
+    CREATE FUNCTION function_name
+    RETURNS data_type
+    AS
+    BEGIN
+        -- Function logic here
+    END;
+    ```
+
+57. **ALTER FUNCTION:**
+    ```sql
+    ALTER FUNCTION function_name
+    AS
+    BEGIN
+        -- Updated function logic here
+    END;
+    ```
+
+58. **DROP FUNCTION:**
+    ```sql
+    DROP FUNCTION function_name;
+    ```
+
+### Cursors:
+
+59. **DECLARE CURSOR:**
+    ```sql
+    DECLARE cursor_name CURSOR FOR
+    SELECT column1, column2 FROM table_name WHERE condition;
+    ```
+
+60. **OPEN, FETCH, CLOSE:**
+    ```sql
+    OPEN cursor_name;
+    FETCH cursor_name INTO variable1, variable2;
+    CLOSE cursor_name;
+    ```
+
+### Backup and Restore:
+
+61. **BACKUP DATABASE (SQL Server):**
+    ```sql
+    BACKUP DATABASE database_name TO disk = 'C:\backup\database.bak';
+    ```
+
+62. **RESTORE DATABASE (SQL Server):**
+    ```sql
+    RESTORE DATABASE database_name FROM disk = 'C:\backup\database.bak';
+    ```
+
+### Analytical Functions:
+
+63. **LEAD:**
+    ```sql
+    SELECT column1, LEAD(column1) OVER (ORDER BY column2) AS next_value
+    FROM table_name;
+    ```
+
+64. **LAG:**
+    ```sql
+    SELECT column1, LAG(column1) OVER (ORDER BY column2) AS previous_value
+    FROM table_name;
+    ```
+
+### XML Functions:
+
+65. **XML PATH (SQL Server):**
+    ```sql
+    SELECT column1, column2
+    FROM table_name
+    FOR XML PATH('row'), ROOT('data');
+    ```
+
+66. **XMLAGG (Oracle):**
+    ```sql
+    SELECT XMLAGG(XMLELEMENT("row", column1, column2)) AS xml_data
+    FROM table_name;
+    ```
+
+### JSON Functions:
+
+67. **JSON_QUERY (SQL Server):**
+    ```sql
+    SELECT JSON_QUERY(column1, '$.property') AS json_property
+    FROM table_name;
+    ```
+
+68. **JSON_OBJECT (MySQL):**
+    ```sql
+    SELECT JSON_OBJECT('property', column1) AS json_data
+    FROM table_name;
+    ```
